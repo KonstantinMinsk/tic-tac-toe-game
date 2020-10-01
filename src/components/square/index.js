@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './square.css';
 
-const Square = () => {
-      
-  const [value, setValue] = useState('');
+const Square = ({ value, onClick }) => {
+  // Square no longer keeps track of the game’s state. This is Board to do.
+  // const [value, setValue] = useState(''); 
 
       return (
-        <button className="square" onClick={() => setValue('X') }>
+        <button className="square" onClick={onClick}>
           { value }
         </button>
       );
