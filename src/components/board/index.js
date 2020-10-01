@@ -6,16 +6,24 @@ import './board.css';
 const Board = () => {
 
     const [square, setSquare] = useState(Array(9).fill(null));
-    const [x, setX] = useState(true);
+    const [walkX, setWalkX] = useState(true);
+    const [score, setScore ] = useState(0);
     
+    const winner = calculateWinner(square);
+    let status = score === 9 
+                    ? 'Draw' 
+                    : winner ? ('Winner: ' + winner) : (`Next player: ${walkX ? 'X' : 'O'}`)
+
     const handleClick = (i) => {
+        
         const squares = [ ...square ];
         if (calculateWinner(squares) || squares[i]) {
             return;
           }
-        squares[i] = x ? 'X' : 'O';
+        squares[i] = walkX ? 'X' : 'O';
         setSquare(squares);
-        setX(!x);
+        setWalkX(!walkX);
+        setScore(score+1)
     }
 
     const renderSquare = (i) => {
@@ -24,9 +32,6 @@ const Board = () => {
                 onClick={() => handleClick(i)}
             />;
     }
-
-    const winner = calculateWinner(square);
-    let status = winner ? ('Winner: ' + winner) : (`Next player: ${x ? 'X' : 'O'}`)
     
     return (
       <div>

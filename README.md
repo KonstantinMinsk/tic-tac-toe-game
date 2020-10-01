@@ -15,8 +15,10 @@ const renderSquare = (i) => {
             />;
     }
 ```
-Результат тот же, что в 3 пункте, но теперь parent - Board знает состояние каждой клетки
-7. Add state x in Board, add squares[i] = x ? 'X' : 'O'
+Результат тот же, что в 3 пункте, но теперь parent - Board знает состояние каждой клетки.
+
+7. Add state x in Board, add squares[i] = x ? 'X' : 'O'.
 
 8. Add fn calculateWinner 
-Check array squares in fn calculateWinner(squares)
+Check array squares in fn calculateWinner(squares).
+9. Add state - score in Board, add variant result - draw.
