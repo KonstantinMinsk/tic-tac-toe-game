@@ -1,7 +1,7 @@
 1. Removed standard files from React App.
 2. Create a components Square, Board, Game.
 3. Add onClick={() => setValue('X') in Square component.
-4. Add state in Board 
+4. Add state [] in Board 
 ```
 const [square, setSquare] = useState(Array(9).fill(null));
 ```
@@ -16,3 +16,7 @@ const renderSquare = (i) => {
     }
 ```
 Результат тот же, что в 3 пункте, но теперь parent - Board знает состояние каждой клетки
+7. Add state x in Board, add squares[i] = x ? 'X' : 'O'
+
+8. Add fn calculateWinner 
+Check array squares in fn calculateWinner(squares)
