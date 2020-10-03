@@ -22,3 +22,4 @@ const renderSquare = (i) => {
 8. Add fn calculateWinner 
 Check array squares in fn calculateWinner(squares).
 9. Add state - score in Board, add variant result - draw.
+10. Transfer state from Board in Game.
